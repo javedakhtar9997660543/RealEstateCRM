@@ -23,9 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DreamWedds.BusinessLayer.Services\DreamWedds.BusinessLayer.Services.csproj" />
-    <ProjectReference Include="..\DreamWedds.CommonLayer.Infrastructure\DreamWedds.CommonLayer.Infrastructure.csproj" />
-    <ProjectReference Include="..\DreamWedds.PersistenceLayer.Context\DreamWedds.PersistenceLayer.Repository.csproj" />
+    <ProjectReference Include="..\AdminProject.BusinessLayer.Services\AdminProject.BusinessLayer.Services.csproj" />
+    <ProjectReference Include="..\AdminProject.CommonLayer.ApplicationServices\AdminProject.CommonLayer.Application.csproj" />
+    <ProjectReference Include="..\AdminProject.CommonLayer.Aspects\AdminProject.CommonLayer.Aspects.csproj" />
+    <ProjectReference Include="..\AdminProject.CommonLayer.Infrastructure\AdminProject.CommonLayer.Infrastructure.csproj" />
+    <ProjectReference Include="..\AdminProject.PersistenceLayer.Entities\AdminProject.PersistenceLayer.Entities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

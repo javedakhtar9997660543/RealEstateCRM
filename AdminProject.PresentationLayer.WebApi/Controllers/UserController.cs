@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using AdminProject.PresentationLayer.WebApi.Helpers;
-using DreamWedds.CommonLayer.Application.DTO;
-using DreamWedds.CommonLayer.Application.Interfaces;
-using DreamWedds.CommonLayer.Aspects.Extensions;
-using DreamWedds.CommonLayer.Infrastructure.Security;
+using AdminProject.CommonLayer.Application.DTO;
+using AdminProject.CommonLayer.Application.Interfaces;
+using AdminProject.CommonLayer.Aspects.Extensions;
+using AdminProject.CommonLayer.Infrastructure.Security;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AuthorizeAttribute = Microsoft.AspNetCore.Authorization.AuthorizeAttribute;

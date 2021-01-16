@@ -1,9 +1,9 @@
-﻿using DreamWedds.BusinessLayer.Services;
+﻿using AdminProject.BusinessLayer.Services;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Security.Claims;
 
-namespace DreamWedds.PresentationLayer.WebApi.Services
+namespace AdminProject.PresentationLayer.WebApi.Services
 {
     public class CurrentUserService : ICurrentUserService
     {
