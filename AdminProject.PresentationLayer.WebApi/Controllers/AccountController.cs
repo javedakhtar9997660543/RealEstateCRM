@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 using AdminProject.PresentationLayer.WebApi.Helpers;
 using AdminProject.PresentationLayer.WebApi.Model;
-using DreamWedds.CommonLayer.Application.DTO;
-using DreamWedds.CommonLayer.Application.Interfaces;
-using DreamWedds.CommonLayer.Aspects.Utitlities;
-using DreamWedds.CommonLayer.Infrastructure;
+using AdminProject.CommonLayer.Application.DTO;
+using AdminProject.CommonLayer.Application.Interfaces;
+using AdminProject.CommonLayer.Aspects.Utitlities;
+using AdminProject.CommonLayer.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;

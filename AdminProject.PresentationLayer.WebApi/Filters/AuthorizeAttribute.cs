@@ -1,5 +1,5 @@
 ﻿using System;
-using DreamWedds.CommonLayer.Application.DTO;
+using AdminProject.CommonLayer.Application.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;

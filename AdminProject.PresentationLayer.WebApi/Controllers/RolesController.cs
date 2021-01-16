@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using DreamWedds.CommonLayer.Application.DTO;
-using DreamWedds.CommonLayer.Application.Interfaces;
+using AdminProject.CommonLayer.Application.DTO;
+using AdminProject.CommonLayer.Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

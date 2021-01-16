@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AutoMapper;
-using DreamWedds.CommonLayer.Application.Mappings;
-using DreamWedds.CommonLayer.Aspects.Security;
+using AdminProject.CommonLayer.Application.Mappings;
+using AdminProject.CommonLayer.Aspects.Security;
 
 namespace AdminProject.PresentationLayer.WebApi.Model
 {

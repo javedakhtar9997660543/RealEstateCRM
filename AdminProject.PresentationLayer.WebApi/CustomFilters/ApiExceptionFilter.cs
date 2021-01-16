@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using DreamWedds.CommonLayer.Application.Exceptions;
+using AdminProject.CommonLayer.Application.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
