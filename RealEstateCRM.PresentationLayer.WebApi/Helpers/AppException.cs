@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace AdminProject.PresentationLayer.WebApi.Helpers
+namespace RealEstateCRM.PresentationLayer.WebApi.Helpers
 {
 
     public class AppException : Exception

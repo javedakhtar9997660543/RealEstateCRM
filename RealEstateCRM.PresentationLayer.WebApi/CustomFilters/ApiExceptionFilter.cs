@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace AdminProject.PresentationLayer.WebApi.CustomFilters
+namespace RealEstateCRM.PresentationLayer.WebApi.CustomFilters
 {
     public class ApiExceptionFilter : ExceptionFilterAttribute
     {

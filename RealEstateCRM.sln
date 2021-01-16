@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminProject.PresentationLayer.WebApi", "AdminProject.PresentationLayer.WebApi\AdminProject.PresentationLayer.WebApi.csproj", "{FABE32CD-DDAE-4BC6-8F5E-E4FBD8F2EF17}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminProject.BusinessLayer.ServiceManager", "AdminProject.BusinessLayer.ServiceManager\AdminProject.BusinessLayer.ServiceManager.csproj", "{23CB7855-E8ED-475B-938C-39EF7E7932E4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminProject.BusinessLayer.Services", "AdminProject.BusinessLayer.Services\AdminProject.BusinessLayer.Services.csproj", "{4CEB083F-75D9-44AD-A7FA-555B4FB58053}"
@@ -21,16 +19,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminProject.PersistenceLay
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminProject.PersistenceLayer.Entities", "AdminProject.PersistenceLayer.Entities\AdminProject.PersistenceLayer.Entities.csproj", "{4AADF79B-7099-4298-9E37-92B0573E4FF2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstateCRM.PresentationLayer.WebApi", "RealEstateCRM.PresentationLayer.WebApi\RealEstateCRM.PresentationLayer.WebApi.csproj", "{60387BFE-8E76-43DE-9629-EBBFFC958B18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FABE32CD-DDAE-4BC6-8F5E-E4FBD8F2EF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FABE32CD-DDAE-4BC6-8F5E-E4FBD8F2EF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FABE32CD-DDAE-4BC6-8F5E-E4FBD8F2EF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FABE32CD-DDAE-4BC6-8F5E-E4FBD8F2EF17}.Release|Any CPU.Build.0 = Release|Any CPU
 		{23CB7855-E8ED-475B-938C-39EF7E7932E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23CB7855-E8ED-475B-938C-39EF7E7932E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23CB7855-E8ED-475B-938C-39EF7E7932E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +55,10 @@ Global
 		{4AADF79B-7099-4298-9E37-92B0573E4FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AADF79B-7099-4298-9E37-92B0573E4FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AADF79B-7099-4298-9E37-92B0573E4FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60387BFE-8E76-43DE-9629-EBBFFC958B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60387BFE-8E76-43DE-9629-EBBFFC958B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60387BFE-8E76-43DE-9629-EBBFFC958B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60387BFE-8E76-43DE-9629-EBBFFC958B18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

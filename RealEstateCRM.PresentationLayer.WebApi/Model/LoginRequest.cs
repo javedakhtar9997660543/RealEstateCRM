@@ -3,7 +3,7 @@ using AutoMapper;
 using AdminProject.CommonLayer.Application.Mappings;
 using AdminProject.CommonLayer.Aspects.Security;
 
-namespace AdminProject.PresentationLayer.WebApi.Model
+namespace RealEstateCRM.PresentationLayer.WebApi.Model
 {
     public class LoginRequest : BaseRequest, IMapFrom<LoginRequest>
     {

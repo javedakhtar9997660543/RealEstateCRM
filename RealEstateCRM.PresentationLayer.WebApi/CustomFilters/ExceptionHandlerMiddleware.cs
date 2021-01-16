@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
-using AdminProject.PresentationLayer.WebApi.Helpers;
+using RealEstateCRM.PresentationLayer.WebApi.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-namespace AdminProject.PresentationLayer.WebApi.CustomFilters
+namespace RealEstateCRM.PresentationLayer.WebApi.CustomFilters
 {
     public class ExceptionHandlerMiddleware
     {

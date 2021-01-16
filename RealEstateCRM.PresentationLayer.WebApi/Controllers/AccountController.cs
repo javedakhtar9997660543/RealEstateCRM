@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using AdminProject.PresentationLayer.WebApi.Helpers;
-using AdminProject.PresentationLayer.WebApi.Model;
+using RealEstateCRM.PresentationLayer.WebApi.Helpers;
+using RealEstateCRM.PresentationLayer.WebApi.Model;
 using AdminProject.CommonLayer.Application.DTO;
 using AdminProject.CommonLayer.Application.Interfaces;
 using AdminProject.CommonLayer.Aspects.Utitlities;
@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace AdminProject.PresentationLayer.WebApi.Controllers
+namespace RealEstateCRM.PresentationLayer.WebApi.Controllers
 {
     [Route("api")]
     public class AccountController : ControllerBase

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AdminProject.PresentationLayer.WebApi.Model
+namespace RealEstateCRM.PresentationLayer.WebApi.Model
 {
     /// <summary>
     /// Base class used by API responses

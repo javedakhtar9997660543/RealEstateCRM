@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Web;
 
-namespace AdminProject.PresentationLayer.WebApi
+namespace RealEstateCRM.PresentationLayer.WebApi
 {
     public class Program
     {

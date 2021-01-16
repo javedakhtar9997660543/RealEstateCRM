@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using AdminProject.PresentationLayer.WebApi.Helpers;
+using RealEstateCRM.PresentationLayer.WebApi.Helpers;
 using AdminProject.CommonLayer.Application.DTO;
 using AdminProject.CommonLayer.Application.Interfaces;
 using AdminProject.CommonLayer.Aspects.Extensions;
@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AuthorizeAttribute = Microsoft.AspNetCore.Authorization.AuthorizeAttribute;
 
-namespace AdminProject.PresentationLayer.WebApi.Controllers
+namespace RealEstateCRM.PresentationLayer.WebApi.Controllers
 {
     [ApiController]
     [Authorize]

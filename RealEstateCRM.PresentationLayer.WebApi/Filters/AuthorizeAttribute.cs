@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace AdminProject.PresentationLayer.WebApi.Filters
+namespace RealEstateCRM.PresentationLayer.WebApi.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class AuthorizationAttribute : Attribute, IAuthorizationFilter

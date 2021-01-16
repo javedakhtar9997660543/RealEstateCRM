@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace AdminProject.PresentationLayer.WebApi.Controllers
+namespace RealEstateCRM.PresentationLayer.WebApi.Controllers
 {
     [Route("api/role")]
     [Authorize(Roles = "Admin")]

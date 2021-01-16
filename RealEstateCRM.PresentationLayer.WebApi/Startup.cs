@@ -1,7 +1,7 @@
 using System.Text;
 using System.Threading.Tasks;
-using AdminProject.PresentationLayer.WebApi.CustomFilters;
-using AdminProject.PresentationLayer.WebApi.Helpers;
+using RealEstateCRM.PresentationLayer.WebApi.CustomFilters;
+using RealEstateCRM.PresentationLayer.WebApi.Helpers;
 using AdminProject.BusinessLayer.Services;
 using AdminProject.CommonLayer.Application;
 using AdminProject.CommonLayer.Application.AppSettings;
@@ -9,7 +9,7 @@ using AdminProject.CommonLayer.Aspects.Helpers;
 using AdminProject.CommonLayer.Infrastructure;
 using AdminProject.CommonLayer.Infrastructure.Correlation;
 using AdminProject.CommonLayer.Infrastructure.Security;
-using AdminProject.PresentationLayer.WebApi.Services;
+using RealEstateCRM.PresentationLayer.WebApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,7 +21,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace AdminProject.PresentationLayer.WebApi
+namespace RealEstateCRM.PresentationLayer.WebApi
 {
     public class Startup
     {

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Security.Claims;
 
-namespace AdminProject.PresentationLayer.WebApi.Services
+namespace RealEstateCRM.PresentationLayer.WebApi.Services
 {
     public class CurrentUserService : ICurrentUserService
     {

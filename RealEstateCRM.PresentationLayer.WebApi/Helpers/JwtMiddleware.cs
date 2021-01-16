@@ -10,7 +10,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 
-namespace AdminProject.PresentationLayer.WebApi.Helpers
+namespace RealEstateCRM.PresentationLayer.WebApi.Helpers
 {
     public class JwtMiddleware
     {
