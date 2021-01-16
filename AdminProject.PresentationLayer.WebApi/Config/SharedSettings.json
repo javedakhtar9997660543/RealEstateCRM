@@ -1,0 +1,8 @@
+﻿{
+  "Encryption": {
+    "HostName": "http://dreamwedds.com",
+    "EncryptionInitVector": "28dreamwedds12ggn",
+    "EncryptionSaltKey": "DreamWedds",
+    "EncryptionDictionary": "Config\\DictionaryEncryption.xml"
+  }
+}
