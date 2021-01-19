@@ -11,7 +11,7 @@ namespace AdminProject.PersistenceLayer.Entities.Common
         public virtual int Id { get; set; }
         public bool IsDeleted { get; set; }
         public int CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
         public int? ModifiedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
     }

@@ -4,14 +4,16 @@ using AdminProject.PersistenceLayer.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AdminProject.PersistenceLayer.Repository.Migrations
 {
     [DbContext(typeof(AdminDbContext))]
-    partial class AdminDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210117192832_CRM4Migration")]
+    partial class CRM4Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -988,14 +990,9 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.Property<int?>("BuilderId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PropertyId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("BuilderId");
-
-                    b.HasIndex("PropertyId");
 
                     b.ToTable("BuilderProperties");
                 });
@@ -2195,10 +2192,6 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.BuilderMaster", "BuilderMaster")
                         .WithMany()
                         .HasForeignKey("BuilderId");
-
-                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyMaster", "Property")
-                        .WithMany()
-                        .HasForeignKey("PropertyId");
                 });
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyCertification", b =>
@@ -2230,6 +2223,10 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyMaster", b =>
                 {
+                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.BuilderProperties", null)
+                        .WithMany("Properties")
+                        .HasForeignKey("PropertyId");
+
                     b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyType", "PropertyType")
                         .WithMany()
                         .HasForeignKey("PropertyId");

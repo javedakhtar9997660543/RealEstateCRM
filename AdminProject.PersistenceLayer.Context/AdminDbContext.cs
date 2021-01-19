@@ -5,6 +5,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using AdminProject.CommonLayer.Aspects.Extensions;
+using AdminProject.PersistenceLayer.Entities.Entities.RealEstate;
 using Microsoft.AspNetCore.Http;
 
 namespace AdminProject.PersistenceLayer.Repository
@@ -46,6 +47,8 @@ namespace AdminProject.PersistenceLayer.Repository
         public DbSet<State> State { get; set; }
         public DbSet<TableCode> TableCode { get; set; }
         public DbSet<TaxRate> TaxRate { get; set; }
+        public DbSet<BuilderMaster> BuilderMaster { get; set; }
+        public DbSet<BuilderProperties> BuilderProperties { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
@@ -72,6 +75,64 @@ namespace AdminProject.PersistenceLayer.Repository
         {
             modelBuilder.Entity<CountryGroup>()
                 .HasKey(o => new { o.Id, o.MemberCountry });
+            modelBuilder.Entity<PropertyMaster>()
+                .Property(t => t.CreatedDate)
+                .IsRequired()
+                .HasColumnType("Date")
+                .HasDefaultValueSql("GetDate()");
+
+            modelBuilder.Entity<PropertyTower>()
+                .Property(t => t.CreatedDate)
+                .IsRequired()
+                .HasColumnType("Date")
+                .HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<Appointment>()
+                .Property(t => t.CreatedDate)
+                .IsRequired()
+                .HasColumnType("Date")
+                .HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<Appointment>()
+                .Property(t => t.Status)
+                .IsRequired()
+                .HasColumnType("int")
+                .HasDefaultValueSql("1");
+
+            modelBuilder.Entity<SalesInquiry>()
+                .Property(t => t.SaleStatus)
+                .IsRequired()
+                .HasColumnType("int")
+                .HasDefaultValueSql("2");
+            modelBuilder.Entity<Customer>()
+                .Property(t => t.CreatedDate)
+                .IsRequired()
+                .HasColumnType("Date")
+                .HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<Customer>()
+                .Property(t => t.ReferenceSource)
+                .IsRequired()
+                .HasColumnType("int")
+                .HasDefaultValueSql("0");
+            modelBuilder.Entity<Customer>()
+                .Property(t => t.AccountStatus)
+                .IsRequired()
+                .HasColumnType("int")
+                .HasDefaultValueSql("0");
+
+            modelBuilder.Entity<UploadedDocument>()
+                .Property(t => t.CreatedDate)
+                .IsRequired()
+                .HasColumnType("Date")
+                .HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<UploadedDocument>()
+                .Property(t => t.DocumentStatus)
+                .IsRequired()
+                .HasColumnType("int")
+                .HasDefaultValueSql("1");
+            modelBuilder.Entity<UploadedDocument>()
+                .Property(t => t.DocumentType)
+                .IsRequired()
+                .HasColumnType("int")
+                .HasDefaultValueSql("2");
         }
 
 

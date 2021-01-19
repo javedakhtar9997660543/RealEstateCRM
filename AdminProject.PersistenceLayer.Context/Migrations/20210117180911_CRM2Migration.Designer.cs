@@ -4,14 +4,16 @@ using AdminProject.PersistenceLayer.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AdminProject.PersistenceLayer.Repository.Migrations
 {
     [DbContext(typeof(AdminDbContext))]
-    partial class AdminDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210117180911_CRM2Migration")]
+    partial class CRM2Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,12 +29,10 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Address1")
-                        .HasColumnType("nvarchar(250)")
-                        .HasMaxLength(250);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Address2")
-                        .HasColumnType("nvarchar(250)")
-                        .HasMaxLength(250);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("AddressStatus")
                         .HasColumnType("int");
@@ -40,11 +40,8 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.Property<int?>("AddressType")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BuilderMasterId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("City")
-                        .HasColumnType("int");
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Country")
                         .HasColumnType("int");
@@ -58,24 +55,14 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.Property<int?>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("GoogleMpsUrl")
-                        .HasColumnType("nvarchar(1500)")
-                        .HasMaxLength(1500);
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Landmark")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
                     b.Property<string>("Lattitude")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Longitude")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ModifiedBy")
                         .HasColumnType("int");
@@ -87,8 +74,7 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("PinCode")
-                        .HasColumnType("nvarchar(6)")
-                        .HasMaxLength(6);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("State")
                         .HasColumnType("int");
@@ -97,8 +83,6 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BuilderMasterId");
 
                     b.HasIndex("CustomerId");
 
@@ -945,61 +929,6 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.ToTable("Appointment");
                 });
 
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.BuilderMaster", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CompletedProjectsCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
-
-                    b.Property<DateTime>("EstablishmentYear")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Logo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(150)")
-                        .HasMaxLength(150);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BuilderMaster");
-                });
-
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.BuilderProperties", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("BuilderId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PropertyId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BuilderId");
-
-                    b.HasIndex("PropertyId");
-
-                    b.ToTable("BuilderProperties");
-                });
-
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.Customer", b =>
                 {
                     b.Property<int>("Id")
@@ -1085,51 +1014,12 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.ToTable("Customer");
                 });
 
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyCertification", b =>
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.Flat", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CertificationNumber")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("IssuedBy")
-                        .HasColumnType("nvarchar(150)")
-                        .HasMaxLength(150);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<int>("PropertyId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ValidFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ValidUntil")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PropertyId");
-
-                    b.ToTable("PropertyCertification");
-                });
-
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyFlat", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("AppointmentId")
-                        .HasColumnType("int");
 
                     b.Property<int?>("AreaMeasurementUnit")
                         .HasColumnType("int");
@@ -1138,6 +1028,9 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Cost")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FlatId")
                         .HasColumnType("int");
 
                     b.Property<int>("FlatNumber")
@@ -1164,13 +1057,50 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.Property<int?>("TotalWashrooms")
                         .HasColumnType("int");
 
+                    b.Property<int?>("TowerId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("AppointmentId");
+                    b.HasIndex("FlatId");
 
                     b.HasIndex("FloorId");
 
-                    b.ToTable("PropertyFlat");
+                    b.ToTable("Flat");
+                });
+
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyCertification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CertificationNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IssuedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<int>("PropertyId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ValidFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ValidUntil")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PropertyId");
+
+                    b.ToTable("PropertyCertification");
                 });
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyImage", b =>
@@ -1253,8 +1183,7 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
 
                     b.Property<string>("PropertyName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(250)")
-                        .HasMaxLength(250);
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -1263,7 +1192,79 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.ToTable("PropertyMaster");
                 });
 
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyRoomDetail", b =>
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyTower", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ConstructionStatus")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("Date")
+                        .HasDefaultValueSql("GetDate()");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Floors")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("PropertyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TowerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TowerNumber")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PropertyId");
+
+                    b.ToTable("PropertyTower");
+                });
+
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyType", b =>
+                {
+                    b.Property<int>("PropertyTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Direction")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PropertyTypeId");
+
+                    b.ToTable("PropertyType");
+                });
+
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.RoomSpecification", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1301,139 +1302,14 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.Property<int?>("RoomWidthSize")
                         .HasColumnType("int");
 
-                    b.Property<int>("TotalSize")
-                        .HasColumnType("int");
+                    b.Property<string>("TotalSize")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("FlatId");
 
-                    b.ToTable("PropertyRoomDetail");
-                });
-
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyTower", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ConstructionStatus")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("Date")
-                        .HasDefaultValueSql("GetDate()");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
-
-                    b.Property<int>("Floors")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("PropertyId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TowerName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(150)")
-                        .HasMaxLength(150);
-
-                    b.Property<int>("TowerNumber")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PropertyId");
-
-                    b.ToTable("PropertyTower");
-                });
-
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyTowerFloor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FloorName")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<int>("FloorNumber")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsGroundFloor")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsRoof")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("TotalFlats")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TowerId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TowerId");
-
-                    b.ToTable("PropertyTowerFloor");
-                });
-
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyType", b =>
-                {
-                    b.Property<int>("PropertyTypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
-
-                    b.Property<string>("Direction")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.HasKey("PropertyTypeId");
-
-                    b.ToTable("PropertyType");
+                    b.ToTable("RoomSpecification");
                 });
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.SalesInquiry", b =>
@@ -1456,8 +1332,7 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("InquirySource")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("InquirySourceId")
                         .HasColumnType("int");
@@ -1496,6 +1371,53 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.ToTable("SalesInquiry");
                 });
 
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.TowerFloor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FloorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FloorNumber")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsGroundFloor")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsRoof")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TotalFlats")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TowerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TowerId");
+
+                    b.ToTable("TowerFloor");
+                });
+
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.UploadedDocument", b =>
                 {
                     b.Property<int>("Id")
@@ -1515,8 +1437,7 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Document")
                         .HasColumnType("nvarchar(max)");
@@ -1537,9 +1458,8 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("LocationUrl")
-                        .HasColumnType("nvarchar(1000)")
-                        .HasMaxLength(1000);
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ModifiedBy")
                         .HasColumnType("int");
@@ -1549,8 +1469,7 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -2116,10 +2035,6 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.AddressMaster", b =>
                 {
-                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.BuilderMaster", null)
-                        .WithMany("Address")
-                        .HasForeignKey("BuilderMasterId");
-
                     b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.Customer", null)
                         .WithMany("Address")
                         .HasForeignKey("CustomerId");
@@ -2190,15 +2105,15 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                         .HasForeignKey("UserId");
                 });
 
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.BuilderProperties", b =>
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.Flat", b =>
                 {
-                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.BuilderMaster", "BuilderMaster")
-                        .WithMany()
-                        .HasForeignKey("BuilderId");
+                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.SalesInquiry", null)
+                        .WithMany("Flats")
+                        .HasForeignKey("FlatId");
 
-                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyMaster", "Property")
-                        .WithMany()
-                        .HasForeignKey("PropertyId");
+                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.TowerFloor", "TowerFloor")
+                        .WithMany("TowerFlats")
+                        .HasForeignKey("FloorId");
                 });
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyCertification", b =>
@@ -2208,17 +2123,6 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                         .HasForeignKey("PropertyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyFlat", b =>
-                {
-                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.SalesInquiry", null)
-                        .WithMany("Flats")
-                        .HasForeignKey("AppointmentId");
-
-                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyTowerFloor", null)
-                        .WithMany("TowerFlats")
-                        .HasForeignKey("FloorId");
                 });
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyImage", b =>
@@ -2235,13 +2139,6 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                         .HasForeignKey("PropertyId");
                 });
 
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyRoomDetail", b =>
-                {
-                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyFlat", null)
-                        .WithMany("Rooms")
-                        .HasForeignKey("FlatId");
-                });
-
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyTower", b =>
                 {
                     b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyMaster", null)
@@ -2249,13 +2146,11 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                         .HasForeignKey("PropertyId");
                 });
 
-            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyTowerFloor", b =>
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.RoomSpecification", b =>
                 {
-                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyTower", null)
-                        .WithMany("TowerFloors")
-                        .HasForeignKey("TowerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.Flat", null)
+                        .WithMany("Rooms")
+                        .HasForeignKey("FlatId");
                 });
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.SalesInquiry", b =>
@@ -2271,6 +2166,15 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.UserMaster", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.TowerFloor", b =>
+                {
+                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.PropertyTower", null)
+                        .WithMany("TowerFloors")
+                        .HasForeignKey("TowerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.RealEstate.UploadedDocument", b =>
