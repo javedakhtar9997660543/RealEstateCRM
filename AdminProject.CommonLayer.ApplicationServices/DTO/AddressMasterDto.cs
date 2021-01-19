@@ -1,9 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-using AdminProject.PersistenceLayer.Entities.Common;
+﻿using AdminProject.CommonLayer.Application.Mappings;
+using AdminProject.PersistenceLayer.Entities.Entities;
+using AutoMapper;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace AdminProject.PersistenceLayer.Entities.Entities
+namespace AdminProject.CommonLayer.Application.DTO
 {
-    public class AddressMaster : BaseEntity, IAggregateRoot
+    public class AddressMasterDto: IMapFrom<AddressMaster>
     {
         [StringLength(250)]
         public string Address1 { get; set; }
@@ -25,7 +30,11 @@ namespace AdminProject.PersistenceLayer.Entities.Entities
         public string Longitude { get; set; }
         [StringLength(1500)]
         public string GoogleMpsUrl { get; set; }
-        public int? UserId { get; set; }
-        public int? CustomerId { get; set; }
+
+        public void Mapping(Profile profile)
+        {
+            profile.CreateMap<AddressMaster, AddressMasterDto>();
+            profile.CreateMap<AddressMasterDto, AddressMaster>();
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using AdminProject.PersistenceLayer.Repository.Impl;
+using AdminProject.PersistenceLayer.Repository.Impl.CRM;
 using AdminProject.PersistenceLayer.Repository.PersistenceServices;
+using AdminProject.PersistenceLayer.Repository.PersistenceServices.CRM;
 using AdminProject.PersistenceLayer.Repository.Repository;
 using AdminProject.PersistenceLayer.Repository.Security;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +17,8 @@ namespace AdminProject.PersistenceLayer.Repository
             services.AddScoped<IEmailRepository, EmailDataImpl>();
             services.AddScoped<ISecurityRepository, SecurityDataImpl>();
             services.AddScoped<ITaskSecurityProviderCache, TaskSecurityProviderCache>();
+            services.AddScoped<ISalesRepository, SalesDataImpl>();
         }
+
     }
 }

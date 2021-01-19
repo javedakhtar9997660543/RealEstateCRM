@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using AdminProject.PersistenceLayer.Repository;
 using AdminProject.PersistenceLayer.Repository.Repository;
 using Microsoft.AspNetCore.Authorization;
+using AdminProject.BusinessLayer.ServiceManager.CRM;
 
 namespace AdminProject.CommonLayer.Infrastructure
 {
@@ -30,7 +31,8 @@ namespace AdminProject.CommonLayer.Infrastructure
             services.AddScoped<IUserService, UserServiceManager>();
             services.AddScoped<ISecurityService, SecurityServiceManager>();
             services.AddScoped<IEmailService, EmailServiceManager>();
-           
+            services.AddScoped<ISalesInquiryService, SalesEnquiryManager>();
+
             return services;
         }
     }
