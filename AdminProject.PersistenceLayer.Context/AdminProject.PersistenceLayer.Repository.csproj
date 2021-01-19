@@ -35,6 +35,10 @@
     <Compile Remove="Migrations\20210112105431_SecurityMigration.Designer.cs" />
     <Compile Remove="Migrations\20210112110509_SecurityMigration.cs" />
     <Compile Remove="Migrations\20210112110509_SecurityMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210117051806_CRMMigration.cs" />
+    <Compile Remove="Migrations\20210117051806_CRMMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210117053338_CRMMigration.cs" />
+    <Compile Remove="Migrations\20210117053338_CRMMigration.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

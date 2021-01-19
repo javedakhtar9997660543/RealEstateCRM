@@ -16,4 +16,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AdminProject.CommonLayer.Aspects\AdminProject.CommonLayer.Aspects.csproj" />
+  </ItemGroup>
+
 </Project>

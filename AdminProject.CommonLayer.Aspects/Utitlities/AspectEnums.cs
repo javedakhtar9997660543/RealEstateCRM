@@ -198,6 +198,98 @@ namespace AdminProject.CommonLayer.Aspects.Utitlities
         }
 
         /// <summary>
+        /// Main user Account Status
+        /// </summary>
+        public enum PropertyReferenceSource
+        {
+            Self = 0,
+            Employee = 1,
+            NewsPaper = 2,
+            NewsChannel = 3,
+            Agent = 4,
+            RoadSideAds = 5,
+            Radio = 6
+        }
+
+        public enum SalesStaus
+        {
+            Hot = 1,
+            Warm = 2,
+            Cold = 3
+        }
+
+        public enum UserType
+        {
+            Employee = 1,
+            Agent = 2,
+            Owner = 3
+        }
+
+        public enum AppointmentStaus
+        {
+            Scheduled = 1,
+            Completed = 2,
+            Cancelled = 3,
+            PostPoned = 4
+        }
+
+        public enum ConstructionStage
+        {
+            PendingStart = 1,
+            InProgress = 2,
+            Completed = 3,
+            PosessionStarted = 4
+        }
+
+        /// <summary>
+        /// Main user Account Status
+        /// </summary>
+        public enum RoomType
+        {
+            Kitchen = 1,
+            Drawing = 2,
+            Master = 3,
+            Guest = 4,
+            WashRoom = 5,
+            Servant = 6,
+            Study = 7,
+            Store = 8
+        }
+
+        public enum DocumentName
+        {
+            PanCard = 1,
+            AadharCard = 2,
+            DrivingLicense = 3,
+            Passport = 4,
+            VoterId = 5
+        }
+
+        public enum DocumentType
+        {
+            AddressProof = 1,
+            IdProof = 2,
+            Certificate = 3,
+            BankStatement = 4
+        }
+
+        public enum FileType
+        {
+            WordDoc = 1,
+            Pdf = 2,
+            ScannedImage = 3
+        }
+
+        public enum DocumentStatus
+        {
+            NotAvailable = 0,
+            Pending = 1,
+            Verified = 2,
+            Rejected = 3,
+            Approved = 4
+        }
+
+        /// <summary>
         /// This enum is used to define user reset password status
         /// </summary>
         public enum UserResetPasswordStatus
