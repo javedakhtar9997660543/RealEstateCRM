@@ -14,6 +14,7 @@ namespace AdminProject.PersistenceLayer.Repository
             services.AddScoped<IUserRepository, UserDataImpl>();
             services.AddScoped<IEmailRepository, EmailDataImpl>();
             services.AddScoped<ISecurityRepository, SecurityDataImpl>();
+            services.AddScoped<IAppMenuRepository, AppMenuDataImpl>();
             services.AddScoped<ITaskSecurityProviderCache, TaskSecurityProviderCache>();
         }
     }

@@ -49,6 +49,8 @@ namespace AdminProject.PersistenceLayer.Repository
         public DbSet<TaxRate> TaxRate { get; set; }
         public DbSet<BuilderMaster> BuilderMaster { get; set; }
         public DbSet<BuilderProperties> BuilderProperties { get; set; }
+        public DbSet<Menu> Menu { get; set; }
+        public DbSet<SubMenu> SubMenu { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
@@ -133,6 +135,28 @@ namespace AdminProject.PersistenceLayer.Repository
                 .IsRequired()
                 .HasColumnType("int")
                 .HasDefaultValueSql("2");
+
+            modelBuilder.Entity<Menu>()
+                .Property(t => t.CreatedDate)
+                .IsRequired()
+                .HasColumnType("Date")
+                .HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<Menu>()
+               .Property(t => t.IsDeleted)
+               .IsRequired()
+               .HasColumnType("bit")
+               .HasDefaultValueSql("0");
+
+            modelBuilder.Entity<SubMenu>()
+               .Property(t => t.CreatedDate)
+               .IsRequired()
+               .HasColumnType("Date")
+               .HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<SubMenu>()
+                .Property(t => t.IsDeleted)
+                .IsRequired()
+                .HasColumnType("bit")
+                .HasDefaultValueSql("0");
         }
 
 
