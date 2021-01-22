@@ -30,7 +30,8 @@ namespace AdminProject.CommonLayer.Infrastructure
             services.AddScoped<IUserService, UserServiceManager>();
             services.AddScoped<ISecurityService, SecurityServiceManager>();
             services.AddScoped<IEmailService, EmailServiceManager>();
-           
+            services.AddScoped<IAppMenuService, AppMenuServiceManager>();
+
             return services;
         }
     }

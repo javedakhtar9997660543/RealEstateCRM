@@ -39,6 +39,18 @@
     <Compile Remove="Migrations\20210117051806_CRMMigration.Designer.cs" />
     <Compile Remove="Migrations\20210117053338_CRMMigration.cs" />
     <Compile Remove="Migrations\20210117053338_CRMMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210117193557_CRM5Migration.cs" />
+    <Compile Remove="Migrations\20210117193557_CRM5Migration.Designer.cs" />
+    <Compile Remove="Migrations\20210122133235_MenuMigration.cs" />
+    <Compile Remove="Migrations\20210122133235_MenuMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210122134731_MenuMigration.cs" />
+    <Compile Remove="Migrations\20210122134731_MenuMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210122135511_MenuMigration1.cs" />
+    <Compile Remove="Migrations\20210122135511_MenuMigration1.Designer.cs" />
+    <Compile Remove="Migrations\20210122135822_MenuMigration.cs" />
+    <Compile Remove="Migrations\20210122135822_MenuMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210122140208_MenuMigration1.cs" />
+    <Compile Remove="Migrations\20210122140208_MenuMigration1.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AdminProject.PersistenceLayer.Repository.Migrations
 {
     [DbContext(typeof(AdminDbContext))]
-    [Migration("20210117193557_CRM5Migration")]
-    partial class CRM5Migration
+    [Migration("20210122141312_CRMDbMigration")]
+    partial class CRMDbMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -739,6 +739,69 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("LoginAttemptHistory");
+                });
+
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.Menu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Alignment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("Date")
+                        .HasDefaultValueSql("GetDate()");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(750)")
+                        .HasMaxLength(750);
+
+                    b.Property<bool>("Root")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Sequence")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<int?>("Title_TId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title_TName")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Menu");
                 });
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.ModuleMaster", b =>
@@ -1786,6 +1849,67 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.ToTable("State");
                 });
 
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.SubMenu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("Date")
+                        .HasDefaultValueSql("GetDate()");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Permission")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("SubTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<int?>("SubTitle_TId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SubTitle_TName")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("SubMenu");
+                });
+
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.SystemSettings", b =>
                 {
                     b.Property<int>("Id")
@@ -2298,6 +2422,13 @@ namespace AdminProject.PersistenceLayer.Repository.Migrations
                     b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.Country", "Country")
                         .WithMany("States")
                         .HasForeignKey("CountryId");
+                });
+
+            modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.SubMenu", b =>
+                {
+                    b.HasOne("AdminProject.PersistenceLayer.Entities.Entities.Menu", null)
+                        .WithMany("SubMenu")
+                        .HasForeignKey("ParentId");
                 });
 
             modelBuilder.Entity("AdminProject.PersistenceLayer.Entities.Entities.SystemSettings", b =>
